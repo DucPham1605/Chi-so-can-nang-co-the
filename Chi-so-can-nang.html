@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so can nang</title>
+</head>
+<body>
+<fieldset>
+<legend><h2>Let us calculate your BMI</h2></legend>
+<h3>Please enter your weight in kilograms</h3>
+<input type="weight" id="weight"/>
+<h3>Please enter you height in meters</h3>
+<input type="height" id="height"/>
+</br></br>
+<button type="button" id="btnCalculate"  onclick = "calculate();"> Calculate </button> <div id="result"> </div>
+    </br></br>
+</fieldset>
+
+<script>
+    function calculate(){
+        let bmi;
+        x =parseFloat(document.getElementById('weight').value);
+        y =parseFloat(document.getElementById('height').value);
+        bmi = parseFloat(x/y*y);
+        if (bmi < 18.5){
+            document.getElementById('result').innerHTML ='Your BMI is '+ bmi + ' and your type is Underweight';
+        }
+        else if (18.5 <= bmi && bmi < 25){
+            document.getElementById('result').innerHTML ='Your BMI is '+ bmi + ' and your type is Normal';
+        }
+        else if (25 <= bmi && bmi < 30) {
+            document.getElementById('result').innerHTML ='Your BMI is '+ bmi + ' and your type is Overweight';
+        }
+        else if(30 <= bmi) {
+            document.getElementById('result').innerHTML ='Your BMI is '+ bmi + ' and your type is Obese';
+        }
+    }
+</script>
+</body>
+</html>
